@@ -10,4 +10,7 @@
 
 @interface CellSearch : UITableViewCell
 
+@property (nonatomic, weak) IBOutlet UILabel *mLabelCompany;
+@property (nonatomic, weak) IBOutlet UILabel *mLabelName;
+
 @end

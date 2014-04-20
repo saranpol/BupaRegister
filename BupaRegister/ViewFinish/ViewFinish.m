@@ -7,12 +7,15 @@
 //
 
 #import "ViewFinish.h"
-
-@interface ViewFinish ()
-
-@end
+#import "API.h"
 
 @implementation ViewFinish
+
+@synthesize mImage;
+@synthesize mLabelName;
+@synthesize mLabelCompany;
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -27,6 +30,12 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    API *a = [API getAPI];
+    
+    [mImage setImage:a.mImageCurrent];
+    
+    [mLabelName setText:[NSString stringWithFormat:@"%@ %@", a.mUserName, a.mUserSurname]];
+    [mLabelCompany setText:a.mUserCompany];
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,6 +61,8 @@
 */
 
 - (IBAction)clickDone:(id)sender {
+    API *a = [API getAPI];
+    [a addUser];
 }
 
 - (IBAction)clickBack:(id)sender {

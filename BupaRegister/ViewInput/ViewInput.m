@@ -7,15 +7,20 @@
 //
 
 #import "ViewInput.h"
-
+#import "API.h"
 
 
 @implementation ViewInput
 
 @synthesize mType;
-@synthesize mImage0;
-@synthesize mImage1;
-@synthesize mImage2;
+@synthesize mTextFieldType;
+@synthesize mTextFieldCompany;
+@synthesize mTextFieldName;
+@synthesize mTextFieldSurname;
+@synthesize mTextFieldTel;
+@synthesize mTextFieldEmail;
+
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,6 +35,14 @@
 {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    UIPickerView *v = [UIPickerView new];
+    v.dataSource = self;
+    v.delegate = self;
+    v.showsSelectionIndicator = YES;
+    mTextFieldType.inputView = v;
+    
+    [mTextFieldType setText:@"สื่อมวลชน"];
 }
 
 - (void)didReceiveMemoryWarning
@@ -67,8 +80,78 @@
 */
 
 
+
+
 - (IBAction)clickBack:(id)sender {
-    [self.navigationController popToRootViewControllerAnimated:YES];
+    [self.navigationController popViewControllerAnimated:YES];
+}
+
+- (IBAction)clickTakePhoto:(id)sender {
+    API *a = [API getAPI];
+    
+    if([mTextFieldType.text isEqualToString:TYPE_1])
+        a.mUserType = 1;
+    if([mTextFieldType.text isEqualToString:TYPE_2])
+        a.mUserType = 2;
+    if([mTextFieldType.text isEqualToString:TYPE_3])
+        a.mUserType = 3;
+    
+    a.mUserCompany = mTextFieldCompany.text;
+    a.mUserName = mTextFieldName.text;
+    a.mUserSurname = mTextFieldSurname.text;
+    a.mUserTel = mTextFieldTel.text;
+    a.mUserEmail = mTextFieldEmail.text;
+    
+    [a takePhoto:self];
+}
+
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    [picker dismissViewControllerAnimated:YES completion:nil];
+    API *a = [API getAPI];
+    [a savePhoto:info];
+    [self performSegueWithIdentifier:@"GotoViewFinish" sender:self];
+}
+
+
+- (IBAction)clickPickType:(id)sender {
+    [mTextFieldType becomeFirstResponder];
+}
+
+
+
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView {
+    return 1;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
+    return 3;
+}
+
+- (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
+    switch (row) {
+        case 0:
+            return TYPE_1;
+        case 1:
+            return TYPE_2;
+        case 2:
+            return TYPE_3;
+    }
+    return @"";
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
+    switch (row) {
+        case 0:
+            [mTextFieldType setText:TYPE_1];
+            break;
+        case 1:
+            [mTextFieldType setText:TYPE_2];
+            break;
+        case 2:
+            [mTextFieldType setText:TYPE_3];
+            break;
+    }
+    [mTextFieldType resignFirstResponder];
 }
 
 @end

@@ -1,0 +1,29 @@
+[
+    {
+    "type":1,
+    "company":"บริษัท1",
+    "name":"พีระ",
+    "surname":"ตั้งใจทำ",
+    "tel":"0813078885",
+    "email":"nott@9nott.com"
+    },
+
+    {
+    "type":2,
+    "company":"บริษัท2",
+    "name":"สมชาติ",
+    "surname":"รักเมือง",
+    "tel":"0877454584",
+    "email":"wwww@gmail.com"
+    },
+
+    {
+    "type":3,
+    "company":"บริษัท3",
+    "name":"สมบัติ",
+    "surname":"ใจดี",
+    "tel":"0854544474",
+    "email":"ttt@gmail.com"
+    }
+
+]

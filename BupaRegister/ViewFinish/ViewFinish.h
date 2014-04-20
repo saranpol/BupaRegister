@@ -10,6 +10,10 @@
 
 @interface ViewFinish : UIViewController
 
+@property (nonatomic, weak) IBOutlet UIImageView *mImage;
+@property (nonatomic, weak) IBOutlet UILabel *mLabelName;
+@property (nonatomic, weak) IBOutlet UILabel *mLabelCompany;
+
 - (IBAction)clickDone:(id)sender;
 - (IBAction)clickBack:(id)sender;
 

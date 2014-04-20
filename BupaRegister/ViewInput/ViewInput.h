@@ -8,12 +8,19 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewInput : UIViewController
+@interface ViewInput : UIViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIPickerViewDataSource, UIPickerViewDelegate>
 
 @property (nonatomic, assign) NSInteger mType;
+@property (nonatomic, weak) IBOutlet UITextField *mTextFieldType;
+@property (nonatomic, weak) IBOutlet UITextField *mTextFieldCompany;
+@property (nonatomic, weak) IBOutlet UITextField *mTextFieldName;
+@property (nonatomic, weak) IBOutlet UITextField *mTextFieldSurname;
+@property (nonatomic, weak) IBOutlet UITextField *mTextFieldTel;
+@property (nonatomic, weak) IBOutlet UITextField *mTextFieldEmail;
 
-@property (nonatomic, weak) IBOutlet UIImageView *mImage0;
-@property (nonatomic, weak) IBOutlet UIImageView *mImage1;
-@property (nonatomic, weak) IBOutlet UIImageView *mImage2;
+- (IBAction)clickBack:(id)sender;
+- (IBAction)clickTakePhoto:(id)sender;
+- (IBAction)clickPickType:(id)sender;
+
 
 @end

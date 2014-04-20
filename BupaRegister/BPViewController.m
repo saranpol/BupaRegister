@@ -31,17 +31,17 @@
 
     if ([[segue identifier] isEqualToString:@"GotoSearch0"]) {
         ViewSearch *v = [segue destinationViewController];
-        v.mType = 0;
+        v.mType = 1;
     }
 
     else if ([[segue identifier] isEqualToString:@"GotoSearch1"]) {
         ViewSearch *v = [segue destinationViewController];
-        v.mType = 1;
+        v.mType = 2;
     }
 
     else if ([[segue identifier] isEqualToString:@"GotoSearch2"]) {
         ViewSearch *v = [segue destinationViewController];
-        v.mType = 2;
+        v.mType = 3;
     }
 
 

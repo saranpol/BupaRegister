@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewSearch : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface ViewSearch : UIViewController <UITableViewDataSource, UITableViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
 @property (nonatomic, assign) NSInteger mType;
 
@@ -18,6 +18,9 @@
 @property (nonatomic, weak) IBOutlet UITextField *mTextField;
 @property (nonatomic, weak) IBOutlet UITableView *mTableView;
 
+@property (nonatomic, strong) NSMutableArray *mArrayFilter;
+
 - (IBAction)clickBack:(id)sender;
+- (IBAction)textChange:(id)sender;
 
 @end
