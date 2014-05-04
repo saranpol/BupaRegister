@@ -87,9 +87,9 @@
         case 2:
             [cell.mLabelType setText:TYPE_2];
             break;
-        case 3:
-            [cell.mLabelType setText:TYPE_3];
-            break;
+//        case 3:
+//            [cell.mLabelType setText:TYPE_3];
+//            break;
     }
     
     [cell.mLabelCompany setText:[d objectForKey:@"company"]];
