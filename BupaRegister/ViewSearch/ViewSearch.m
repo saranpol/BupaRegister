@@ -96,11 +96,14 @@
             continue;
         if([self containString:q text:[u objectForKey:@"company"] array:mArrayFilter item:u])
             continue;
+
         NSString *name = [u objectForKey:@"name"];
         NSString *surname = [u objectForKey:@"surname"];
         NSString *fullName = [NSString stringWithFormat:@"%@ %@", name, surname];
-        
         if([self containString:q text:fullName array:mArrayFilter item:u])
+            continue;
+
+        if([self containString:q text:[u objectForKey:@"email"] array:mArrayFilter item:u])
             continue;
 
         
@@ -123,8 +126,12 @@
     CellSearch *cell = [tableView dequeueReusableCellWithIdentifier:@"CellSearch" forIndexPath:indexPath];
 
     NSDictionary *d = [mArrayFilter objectAtIndex:indexPath.row];
-    [cell.mLabelCompany setText:[d objectForKey:@"company"]];
-    [cell.mLabelName setText:[NSString stringWithFormat:@"%@ %@", [d objectForKey:@"name"], [d objectForKey:@"surname"]]];
+    NSString *company = [d objectForKey:@"company"];
+    NSString *email = [d objectForKey:@"email"];
+    if(company)
+        [cell.mLabelCompany setText:company];
+    if(email)
+        [cell.mLabelName setText:email];
     return cell;
 }
 
@@ -141,7 +148,9 @@
     a.mUserEmail = [d objectForKey:@"email"];
     a.mUserType = mType;
     
-    [a takePhoto:self];
+    //[a takePhoto:self];
+    
+    [self performSegueWithIdentifier:@"GotoViewInputFromSearch" sender:self];
     
 }
 

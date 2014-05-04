@@ -43,7 +43,9 @@ static API *instance;
     
     NSString *file = [[NSBundle mainBundle] pathForResource:@"user_list" ofType:@"json"];
     NSData *data = [NSData dataWithContentsOfFile:file];
-    self.mArraySearchUser = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:nil];
+    NSError *e;
+    self.mArraySearchUser = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&e];
+    NSLog(@"error %@", e);
     
     return a;
 }
@@ -184,7 +186,16 @@ static API *instance;
     
     [self saveObject:userArray forKey:M_USER_ARRAY];
     
-    
+
+    // Clear
+    self.mUserType = 1;
+    self.mUserCompany = nil;
+    self.mUserName = nil;
+    self.mUserSurname = nil;
+    self.mUserTel = nil;
+    self.mUserEmail = nil;
+    self.mUserPhotoPath = nil;
+ 
 }
 
 @end

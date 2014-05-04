@@ -42,7 +42,24 @@
     v.showsSelectionIndicator = YES;
     mTextFieldType.inputView = v;
     
-    [mTextFieldType setText:@"สื่อมวลชน"];
+    [mTextFieldType setText:TYPE_1];
+    
+    API *a = [API getAPI];
+    if(a.mUserType == 2)
+        [mTextFieldType setText:TYPE_2];
+    if(a.mUserType == 3)
+        [mTextFieldType setText:TYPE_3];
+    
+    if(a.mUserCompany)
+        mTextFieldCompany.text = a.mUserCompany;
+    if(a.mUserName)
+        mTextFieldName.text = a.mUserName;
+    if(a.mUserSurname)
+        mTextFieldSurname.text = a.mUserSurname;
+    if(a.mUserTel)
+        mTextFieldTel.text = a.mUserTel;
+    if(a.mUserEmail)
+        mTextFieldEmail.text = a.mUserEmail;
 }
 
 - (void)didReceiveMemoryWarning
@@ -83,6 +100,16 @@
 
 
 - (IBAction)clickBack:(id)sender {
+    // Clear
+    API *a = [API getAPI];
+    a.mUserType = 1;
+    a.mUserCompany = nil;
+    a.mUserName = nil;
+    a.mUserSurname = nil;
+    a.mUserTel = nil;
+    a.mUserEmail = nil;
+    a.mUserPhotoPath = nil;
+    
     [self.navigationController popViewControllerAnimated:YES];
 }
 

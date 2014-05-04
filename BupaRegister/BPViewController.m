@@ -8,6 +8,7 @@
 
 #import "BPViewController.h"
 #import "ViewSearch.h"
+#import "API.h"
 
 @implementation BPViewController
 
@@ -15,6 +16,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    [API getAPI];
 }
 
 - (void)didReceiveMemoryWarning

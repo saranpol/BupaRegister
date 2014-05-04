@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C64" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="J5Q-Xp-6zc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="5056" systemVersion="13C1021" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" useAutolayout="YES" initialViewController="J5Q-Xp-6zc">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3733"/>
     </dependencies>
@@ -472,10 +472,6 @@
                                 <rect key="frame" x="286" y="314" width="197" height="35"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="tx-searchname.png" translatesAutoresizingMaskIntoConstraints="NO" id="YY9-yq-gjF">
-                                <rect key="frame" x="135" y="383" width="288" height="34"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                            </imageView>
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="bg-boxsearch.png" translatesAutoresizingMaskIntoConstraints="NO" id="qzc-v7-EU5">
                                 <rect key="frame" x="131" y="430" width="506" height="63"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -523,14 +519,14 @@
                                                     <color key="backgroundColor" red="0.50588235294117645" green="0.84705882352941175" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Company" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="WFC-Jt-oSj">
-                                                    <rect key="frame" x="16" y="9" width="114" height="40"/>
+                                                    <rect key="frame" x="16" y="9" width="236" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="b3N-Ar-dz9">
-                                                    <rect key="frame" x="154" y="9" width="337" height="40"/>
+                                                    <rect key="frame" x="266" y="9" width="224" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -551,6 +547,23 @@
                                     <outlet property="delegate" destination="aho-gz-hgT" id="1Po-G9-z4X"/>
                                 </connections>
                             </tableView>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8Z-wh-qaB">
+                                <rect key="frame" x="680" y="956" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="koz-Lj-vCu" kind="push" identifier="GotoViewInputFromSearch" id="1bQ-dv-Cki"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="กรุณาพิมพ์อีเมล์ หรือชื่อบริษัท" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5z7-Da-77d">
+                                <rect key="frame" x="133" y="378" width="348" height="44"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" red="0.38431376218795776" green="0.38431376218795776" blue="0.38431376218795776" alpha="1" colorSpace="deviceRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -791,7 +804,6 @@
         <image name="tx-hospital.png" width="197" height="35"/>
         <image name="tx-regiscomplete.png" width="300" height="26"/>
         <image name="tx-result.png" width="506" height="223"/>
-        <image name="tx-searchname.png" width="288" height="34"/>
         <image name="tx_PlzSelect.png" width="204" height="44"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
@@ -800,7 +812,8 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="KC6-8J-RK8"/>
+        <segue reference="1bQ-dv-Cki"/>
         <segue reference="iqU-KV-ax9"/>
+        <segue reference="KC6-8J-RK8"/>
     </inferredMetricsTieBreakers>
 </document>
