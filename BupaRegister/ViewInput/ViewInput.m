@@ -42,11 +42,12 @@
     v.showsSelectionIndicator = YES;
     mTextFieldType.inputView = v;
     
-    [mTextFieldType setText:TYPE_1];
+//    [mTextFieldType setText:TYPE_1];
+    [mTextFieldType setText:TYPE_2];
     
     API *a = [API getAPI];
-    if(a.mUserType == 2)
-        [mTextFieldType setText:TYPE_2];
+    if(a.mUserType == 1)
+        [mTextFieldType setText:TYPE_1];
 //    if(a.mUserType == 3)
 //        [mTextFieldType setText:TYPE_3];
     

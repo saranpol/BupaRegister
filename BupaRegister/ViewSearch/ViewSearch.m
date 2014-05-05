@@ -56,13 +56,13 @@
     [mImage2 setHidden:YES];
     
     switch (mType) {
-        case 0:
+        case 1:
             [mImage0 setHidden:NO];
             break;
-        case 1:
+        case 2:
             [mImage1 setHidden:NO];
             break;
-        case 2:
+        case 3:
             [mImage2 setHidden:NO];
             break;
     }
@@ -106,6 +106,9 @@
         if([self containString:q text:[u objectForKey:@"email"] array:mArrayFilter item:u])
             continue;
 
+        if([self containString:q text:[u objectForKey:@"tel"] array:mArrayFilter item:u])
+            continue;
+
         
 //        if([self containString:q text:[u objectForKey:@"email"] array:mArrayFilter item:u])
 //            continue;
@@ -127,11 +130,15 @@
 
     NSDictionary *d = [mArrayFilter objectAtIndex:indexPath.row];
     NSString *company = [d objectForKey:@"company"];
-    NSString *email = [d objectForKey:@"email"];
     if(company)
         [cell.mLabelCompany setText:company];
-    if(email)
-        [cell.mLabelName setText:email];
+    NSString *name = [d objectForKey:@"name"];
+    NSString *surname = [d objectForKey:@"surname"];
+    if(!name)
+        name = @"";
+    if(!surname)
+        surname = @"";
+    [cell.mLabelName setText:[NSString stringWithFormat:@"%@ %@", name, surname]];
     return cell;
 }
 

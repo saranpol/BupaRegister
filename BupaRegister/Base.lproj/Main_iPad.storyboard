@@ -212,8 +212,8 @@
                                 <rect key="frame" x="55" y="55" width="173" height="173"/>
                                 <autoresizingMask key="autoresizingMask"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7d-iu-gvY">
-                                <rect key="frame" x="55" y="267" width="320" height="299"/>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="g7d-iu-gvY">
+                                <rect key="frame" x="392" y="584" width="320" height="299"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="btn_press.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -223,7 +223,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t5e-qv-vcx">
-                                <rect key="frame" x="224" y="584" width="320" height="299"/>
+                                <rect key="frame" x="392" y="267" width="320" height="299"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="btn_register.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -233,7 +233,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lqk-Zy-3Da">
-                                <rect key="frame" x="392" y="267" width="320" height="299"/>
+                                <rect key="frame" x="55" y="267" width="320" height="299"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="btn_blogger.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -519,14 +519,14 @@
                                                     <color key="backgroundColor" red="0.50588235294117645" green="0.84705882352941175" blue="0.96470588235294119" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Company" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="WFC-Jt-oSj">
-                                                    <rect key="frame" x="16" y="9" width="236" height="40"/>
+                                                    <rect key="frame" x="16" y="9" width="193" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="4" translatesAutoresizingMaskIntoConstraints="NO" id="b3N-Ar-dz9">
-                                                    <rect key="frame" x="266" y="9" width="224" height="40"/>
+                                                    <rect key="frame" x="226" y="9" width="259" height="40"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -557,13 +557,10 @@
                                     <segue destination="koz-Lj-vCu" kind="push" identifier="GotoViewInputFromSearch" id="1bQ-dv-Cki"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="กรุณาพิมพ์อีเมล์ หรือชื่อบริษัท" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5z7-Da-77d">
-                                <rect key="frame" x="133" y="378" width="348" height="44"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" red="0.38431376218795776" green="0.38431376218795776" blue="0.38431376218795776" alpha="1" colorSpace="deviceRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="tx-searchname.png" translatesAutoresizingMaskIntoConstraints="NO" id="sy5-Nv-Vrx">
+                                <rect key="frame" x="135" y="382" width="288" height="34"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -804,6 +801,7 @@
         <image name="tx-hospital.png" width="197" height="35"/>
         <image name="tx-regiscomplete.png" width="300" height="26"/>
         <image name="tx-result.png" width="506" height="223"/>
+        <image name="tx-searchname.png" width="288" height="34"/>
         <image name="tx_PlzSelect.png" width="204" height="44"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
