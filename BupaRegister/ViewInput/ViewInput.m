@@ -42,12 +42,15 @@
     v.showsSelectionIndicator = YES;
     mTextFieldType.inputView = v;
     
-//    [mTextFieldType setText:TYPE_1];
-    [mTextFieldType setText:TYPE_2];
+    [mTextFieldType setText:TYPE_1];
+//    [mTextFieldType setText:TYPE_2];
     
     API *a = [API getAPI];
-    if(a.mUserType == 1)
-        [mTextFieldType setText:TYPE_1];
+    if(a.mUserType == 2)
+        [mTextFieldType setText:TYPE_2];
+    if(a.mUserType == 4)
+        [mTextFieldType setText:TYPE_4];
+
 //    if(a.mUserType == 3)
 //        [mTextFieldType setText:TYPE_3];
     
@@ -121,6 +124,9 @@
         a.mUserType = 1;
     if([mTextFieldType.text isEqualToString:TYPE_2])
         a.mUserType = 2;
+    if([mTextFieldType.text isEqualToString:TYPE_4])
+        a.mUserType = 4;
+
 //    if([mTextFieldType.text isEqualToString:TYPE_3])
 //        a.mUserType = 3;
     
@@ -152,8 +158,7 @@
 }
 
 - (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component {
-//    return 3;
-    return 2;
+    return 3;
 }
 
 - (NSString *)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component {
@@ -162,6 +167,9 @@
             return TYPE_1;
         case 1:
             return TYPE_2;
+        case 2:
+            return TYPE_4;
+
 //        case 2:
 //            return TYPE_3;
     }
@@ -176,9 +184,9 @@
         case 1:
             [mTextFieldType setText:TYPE_2];
             break;
-//        case 2:
-//            [mTextFieldType setText:TYPE_3];
-//            break;
+        case 2:
+            [mTextFieldType setText:TYPE_4];
+            break;
     }
     [mTextFieldType resignFirstResponder];
 }

@@ -188,7 +188,7 @@ static API *instance;
     
 
     // Clear
-    self.mUserType = 1;
+    self.mUserType = 2;
     self.mUserCompany = nil;
     self.mUserName = nil;
     self.mUserSurname = nil;

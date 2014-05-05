@@ -13,6 +13,7 @@
 #define TYPE_1 @"สื่อมวลชน"
 #define TYPE_2 @"BLOGGER"
 //#define TYPE_3 @"โรงพยาบาล"
+#define TYPE_4 @"อื่นๆ"
 #define M_USER_ARRAY @"M_USER_ARRAY_1"
 
 
